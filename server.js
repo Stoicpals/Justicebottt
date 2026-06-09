@@ -30,7 +30,7 @@ const __dirname = path.dirname(__filename);
 // 🔥 IMPORTANT FIX (MOVE THIS UP)
 // =============================
 app.use(express.static(__dirname));
-app.get("/", (req, res) => { res.sendFile(path.join(_dirnmae,"chat.html"));
+app.get("/", (req, res) => { res.sendFile(path.join(__dirnmae,"chat.html"));
 });
 
 // =============================
