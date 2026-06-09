@@ -347,7 +347,7 @@ app.get("/", (req, res) => {
 // =============================
 // Server Start
 // =============================
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () =>
   console.log(`🚀 JusticeBot running at http://127.0.0.1:${PORT}`)
