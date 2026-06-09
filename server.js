@@ -190,10 +190,10 @@ We do not support illegal activities.
     res.json({ reply: botReply });
 
   } catch (error) {
-    console.error("❌ Chat Error:", error);
+    console.error(" Full Chat Error:", error);
     res.status(500).json({ 
-      error: error.message,
-      stack: error.stack});
+      reply: error.message,
+     });
   }
 });
 
@@ -348,5 +348,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () =>
-  console.log(`🚀 JusticeBot running at http://127.0.0.1:${PORT}`)
+  console.log(`🚀 JusticeBot running on port ${PORT}`)
 );
