@@ -195,7 +195,9 @@ We do not support illegal activities.
 
   } catch (error) {
     console.error("❌ Chat Error:", error);
-    res.status(500).json({ reply: "Server error" });
+    res.status(500).json({ 
+      error: error.message,
+      stack: error.stack});
   }
 });
 
