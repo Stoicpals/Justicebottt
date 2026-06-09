@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JusticeBot | Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+<h1>⚖️ JusticeBot</h1>
+
+<nav>
+
+<a href="//chat.html">Chat</a>
+<a href="/analyze.html">Analyzer</a>
+<a href="/explorer.html">Explorer</a>
+<a href="/dashboard.html">Dashboard</a>
+<a href="/about.html">About</a>
+</nav>
+</header>
+
+<main>
+
+<div class="chat-container">
+
+<div class="chat-header">
+<h3>IPC Law Explorer</h3>
+<p style="font-size:13px;opacity:0.8;">
+Search IPC sections or crimes to understand the offense and punishment.
+</p>
+</div>
+
+<div class="chat-box">
+
+<div style="display:flex;gap:10px;margin-bottom:20px;">
+
+<input id="searchLaw"
+placeholder="Example: theft, cheating, identity theft"
+style="flex:1;">
+
+<button onclick="searchLaw()">Search</button>
+
+</div>
+
+<div id="lawResults"></div>
+
+</div>
+
+</div>
+
+</main>
+
+
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JusticeBot | Analyzer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+<h1>⚖️ JusticeBot</h1>
+
+<nav>
+
+<a href="/chat.html">Chat</a>
+<a href="/analyze.html">Analyzer</a>
+<a href="/explorer.html">Explorer</a>
+<a href="/dashboard.html">Dashboard</a>
+<a href="/about.html">About</a>
+</nav>
+</header>
+
+<main>
+
+<div class="chat-container">
+
+<div class="chat-header">
+<h3>Legal Situation Analyzer</h3>
+<p style="font-size:13px;opacity:0.8;">
+Describe a situation and JusticeBot will identify relevant IPC sections and actions.
+</p>
+</div>
+
+<div class="chat-box">
+
+<textarea id="situationInput" 
+placeholder="Example: Someone hacked my bank account or someone stole my wallet"
+style="width:100%;height:90px;margin-bottom:15px;border-radius:8px;padding:10px;background:#0d121b;border:1px solid #2a3340;color:white;"></textarea>
+
+<button onclick="analyzeSituation()" style="width:100%;">Analyze Situation</button>
+
+<div id="result" style="margin-top:20px;"></div>
+
+</div>
+
+</div>
+
+</main>
+
+
+</body>
+<script src="script.js"></script>
+</html>

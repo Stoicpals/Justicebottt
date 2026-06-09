@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JusticeBot | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ✅ Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="main-header">
+  <h1>JusticeBot ⚖️</h1>
+  <nav>
+    
+    <a href="/chat.html">Chat</a>
+    <a href="/analyze.html">Analyzer</a>
+    <a href="/explorer.html">Explorer</a>
+    <a href="/dashboard.html">Dashboard</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+
+<div class="dashboard-container">
+
+  <h2>📊 Dashboard</h2>
+
+  <!-- ===================== -->
+  <!-- TOP CARDS -->
+  <!-- ===================== -->
+  <div class="stats-grid">
+
+    <div class="card">
+      <h3>Total Queries</h3>
+      <p id="totalQueries">--</p>
+    </div>
+
+    <div class="card">
+      <h3>DB Hits</h3>
+      <p id="dbHits">--</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Fallbacks</h3>
+      <p id="aiFallbacks">--</p>
+    </div>
+
+    <div class="card">
+      <h3>Situations Analyzed</h3>
+      <p id="situations">--</p>
+      <span>Avg risk: 6.2</span>
+    </div>
+
+    <div class="card">
+      <h3>Avg Response Time</h3>
+      <p>0.8s</p>
+      <span>Under 1s target met</span>
+    </div>
+
+  </div>
+
+  <!-- ===================== -->
+  <!-- CHARTS -->
+  <!-- ===================== -->
+  <div class="charts">
+
+    <div class="chart-box">
+      <h3>⚖️ DB vs AI Usage</h3>
+      <canvas id="sourceChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>📈 Query Activity</h3>
+      <canvas id="queryChart"></canvas>
+    </div>
+
+  </div>
+
+  <!-- ===================== -->
+  <!-- TABLE -->
+  <!-- ===================== -->
+  <h3>Recent Interactions</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Query</th>
+        <th>Module</th>
+        <th>Source</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody id="tableData"></tbody>
+  </table>
+
+</div>
+
+<!-- ✅ IMPORTANT FIX -->
+<script src="script.js" defer></script>
+
+</body>
+</html>
