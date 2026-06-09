@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 // MongoDB Connection
 // =============================
 mongoose
-  .connect("mongodb://127.0.0.1:27017/justicebot")
+  .connect(process.env.MONGODB_URL)
   .then(() => console.log("✅ MongoDB Connected Successfully"))
   .catch((err) => console.error("❌ MongoDB Connection Failed:", err));
 
