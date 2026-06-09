@@ -38,7 +38,7 @@ async function sendMessage() {
 
     showTypingIndicator();
 
-    const response = await fetch("http://127.0.0.1:5000/api/chat", {
+    const response = await fetch("/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -189,7 +189,7 @@ async function searchLaw() {
 
     results.innerHTML = "<p>🔍 Searching...</p>";
 
-    const response = await fetch(`http://127.0.0.1:5000/api/explorer?q=${query}`);
+    const response = await fetch(`/api/explorer?q=${query}`);
 
     if (!response.ok) throw new Error("Fetch failed");
 
@@ -303,7 +303,7 @@ if (document.getElementById("totalQueries")) {
 async function loadDashboardCharts() {
   try {
 
-    const res = await fetch("http://127.0.0.1:5000/api/stats");
+    const res = await fetch("/api/stats");
 
     if (!res.ok) throw new Error("Stats API failed");
 
