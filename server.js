@@ -17,11 +17,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(
-  cors({
-    origin: "http://127.0.0.1:5000",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
-  })
+  cors()
 );
 
 // =============================
