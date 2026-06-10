@@ -134,6 +134,26 @@ app.post("/api/chat", async (req, res) => {
     let userMessage = req.body.message.toLowerCase();
     userMessage = normalizeQuery(userMessage);
 
+    const exactResult = await Legal.findOne({
+  section: userMessage.toUpperCase().replace(/\s+/g, "_")
+});
+
+if (exactResult) {
+  return res.json({
+    reply: `
+📘 Relevant Law Found
+
+⚖ Section: ${exactResult.section}
+📝 Offense: ${exactResult.offense}
+📖 Description: ${exactResult.description}
+⚠ Punishment: ${exactResult.punishment}
+
+💡 Source: Indian Penal Code
+🗄 Source: Local Database
+`
+  });
+}
+
     if (detectBadIntent(userMessage)) {
 
       const warning = `
@@ -150,11 +170,10 @@ We do not support illegal activities.
     const regex = new RegExp(keywords.join("|"), "i");
 
     const result = await Legal.findOne({
-      $or: [
-        { section: regex },
-        { offense: regex },
-        { description: regex }
-      ]
+      section: {
+        $regex: userMessage.replace(/\s+/g,"_"),
+        $options: "i"
+         }
     });
 
     if (result) {
