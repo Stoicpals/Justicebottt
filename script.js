@@ -227,7 +227,7 @@ async function searchLaw() {
 async function loadDashboard() {
   try {
 
-    const res = await fetch("http://127.0.0.1:5000/api/stats");
+    const res = await fetch("/api/stats");
 
     if (!res.ok) throw new Error("Stats API failed");
 
